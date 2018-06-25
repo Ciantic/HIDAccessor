@@ -1,0 +1,9 @@
+LIBRARY DLLMAIN
+EXPORTS
+    hid_get_path @1
+    hid_open @2
+    hid_write @3
+    hid_read @4
+	hid_register_reader @5
+    hid_unregister_reader @6
+    hid_close @7
