@@ -6,6 +6,9 @@ MIT Licensed, see LICENSE.txt, created by Jari Pennanen, 2018.
 
 The DLL is in the repository for convenience.
 
+You probably first need the [VS 2017 runtimes vc_redist.x64.exe and/or vc_redist.x86.exe](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads), if they are not installed already. I've built the DLL using VS 2017, and Microsoft is not providing those runtimes (who knows why) with Windows 10 yet.
+
+
 ## Example usage
 
 See example usage with AutoHotkey_L (unicode) [HIDExample.ahk](./HIDExample.ahk) which writes bytes to Ergodox Ez keyboard and reads bytes back. Also the tests project can be useful example.
