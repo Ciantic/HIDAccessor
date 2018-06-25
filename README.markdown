@@ -15,7 +15,7 @@ See example usage with AutoHotkey_L (unicode) [HIDExample.ahk](./HIDExample.ahk)
 ```c++
 /// Get HID path
 ///
-/// According to MSDN the given path does not change between computer restarts
+/// According to MSDN the device path does not change between computer restarts
 BOOL DllExport hid_get_path( // Returns True on success
 	_In_ unsigned int vid, // Vendor ID
 	_In_ unsigned int pid, // Process ID
