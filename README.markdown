@@ -36,7 +36,7 @@ DWORD DllExport hid_write( // Returns bytes written (zero on failure
 
 /// Hid read buffer (synchronously)
 ///
-/// To read buffer continuosly use hid_unregister_reader()
+/// To read buffer continuosly use hid_register_reader()
 DWORD DllExport hid_read( // Returns Bytes read (zero on failure)
 	_In_ HANDLE hHid, // Handle to hid (get using hid_open)
 	_Out_writes_bytes_(nNumberOfBytesToRead) __out_data_source(FILE) LPVOID lpBuffer, // Read buffer pointer

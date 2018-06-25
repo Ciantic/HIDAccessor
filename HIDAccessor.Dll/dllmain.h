@@ -121,7 +121,7 @@ DWORD DllExport hid_write( // Returns bytes written (zero on failure
 
 /// Hid read buffer (synchronously)
 ///
-/// To read buffer continuosly use hid_unregister_reader()
+/// To read hid device continuosly use hid_register_reader()
 DWORD DllExport hid_read( // Returns Bytes read (zero on failure)
 	_In_ HANDLE hHid, // Handle to hid (get using hid_open)
 	_Out_writes_bytes_(nNumberOfBytesToRead) __out_data_source(FILE) LPVOID lpBuffer, // Read buffer pointer
@@ -156,9 +156,9 @@ void _readerLoop() {
 	}
 }
 
-/// Hid register reader (replaces any existing reader)
+/// Register reader (replaces any existing reader)
 /// 
-/// Reads the data continuosly in own thread, SendMessage's to your listener
+/// Reads the data continuosly in own std::thread, SendMessage()s to your listener
 bool DllExport hid_register_reader( // Returns true on success
 	_In_ LPWSTR path, // Device path, get using hid_get_path()
 	_In_ HWND readerHwnd, // listener WIN32 window handle
