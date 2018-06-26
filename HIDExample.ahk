@@ -52,8 +52,8 @@ KeybReader(wParam, lParam, msg, msgHwnd) {
     if (msgHwnd) {
         size := wParam ; in this example 33
         firstChar := NumGet(lParam + 0, 0, "UChar") ; in this example zero
-        secondChar := NumGet(lParam + 0, 1, "UChar") ; in this example 0x80 (128)
-        thirdChar := NumGet(lParam + 0, 2, "UChar") ; in this example 0xff (255)
+        secondChar := NumGet(lParam + 0, 1, "UChar") ; in this example 0x01
+        thirdChar := NumGet(lParam + 0, 2, "UChar") ; in this example 0x02
         MsgBox, Got message! %size% in bytes, buffer contents: %firstChar% %secondChar% %thirdChar% ...
     }
 }
@@ -69,8 +69,8 @@ if (!hHid) {
 ; Write
 VarSetCapacity(WriteBuffer, 33, 0)
 NumPut(0, WriteBuffer, 0, "UChar")
-NumPut(0x80, WriteBuffer, 1, "UChar")
-NumPut(0xff, WriteBuffer, 2, "UChar")
+NumPut(0x01, WriteBuffer, 1, "UChar")
+NumPut(0x01, WriteBuffer, 2, "UChar")
 res := DllCall(hid_write_proc, UInt, hHid, Ptr, &WriteBuffer, UInt, 33)
 if (!res) {
     MsgBox, Failed to write
